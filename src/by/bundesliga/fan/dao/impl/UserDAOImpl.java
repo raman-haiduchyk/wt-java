@@ -11,13 +11,13 @@ import java.sql.*;
 
 public class UserDAOImpl implements UserDAO {
 
-    private static final String DB_COLUMN_FAVTEAM = "email";
-    private static final String DB_COLUMN_PHONE = "roleName";
-    private static final String DB_COLUMN_ADDRESS = "id";
+    private static final String DB_COLUMN_FAVTEAM = "team";
+    private static final String DB_COLUMN_PHONE = "phone";
+    private static final String DB_COLUMN_ADDRESS = "address";
     private static final String DB_COLUMN_EMAIL = "email";
     private static final String DB_COLUMN_ROLE = "roleName";
     private static final String DB_COLUMN_ID = "id";
-    private static final String DB_COLUMN_FIRSTNAME = "name";
+    private static final String DB_COLUMN_FIRSTNAME = "firstname";
     private static final String DB_COLUMN_LASTNAME = "lastname";
     private static final String DB_COLUMN_LOGIN = "login";
 
