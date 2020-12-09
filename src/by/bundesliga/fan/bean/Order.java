@@ -7,20 +7,22 @@ import java.util.Objects;
 
 public class Order implements Serializable {
     private int id;
-    private User customer;
+    private String state;
+    private String address;
+    private String phone;
     private Map<Item, Integer> items;
     private Date orderDate;
-    private String paymentType;
     private String comment;
 
     public Order(){}
 
-    public Order(int id, User customer, Map<Item, Integer> items, Date orderDate, String paymentType, String comment){
+    public Order(int id, String address, String phone, Map<Item, Integer> items, Date orderDate, String state, String comment){
         this.id = id;
-        this.customer = customer;
+        this.address = address;
+        this.phone = phone;
+        this.state = state;
         this.items = items;
         this.orderDate = orderDate;
-        this.paymentType = paymentType;
         this.comment = comment;
     }
 
@@ -36,16 +38,20 @@ public class Order implements Serializable {
         return items;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
     public String getComment() {
         return comment;
-    }
-
-    public String getPaymentType() {
-        return paymentType;
-    }
-
-    public User getCustomer() {
-        return customer;
     }
 
     public void setId(int id) {
@@ -56,8 +62,16 @@ public class Order implements Serializable {
         this.comment = comment;
     }
 
-    public void setCustomer(User customer) {
-        this.customer = customer;
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public void setItems(Map<Item, Integer> items) {
@@ -68,8 +82,18 @@ public class Order implements Serializable {
         this.orderDate = orderDate;
     }
 
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", state='" + state + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", items=" + items +
+                ", orderDate=" + orderDate +
+                ", comment='" + comment + '\'' +
+                '}';
     }
 
     @Override
@@ -78,27 +102,16 @@ public class Order implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
         return id == order.id &&
-                Objects.equals(customer, order.customer) &&
+                Objects.equals(state, order.state) &&
+                Objects.equals(address, order.address) &&
+                Objects.equals(phone, order.phone) &&
                 Objects.equals(items, order.items) &&
                 Objects.equals(orderDate, order.orderDate) &&
-                Objects.equals(paymentType, order.paymentType) &&
                 Objects.equals(comment, order.comment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, customer, items, orderDate, paymentType, comment);
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", customer=" + customer +
-                ", items=" + items +
-                ", orderDate=" + orderDate +
-                ", paymentType='" + paymentType + '\'' +
-                ", comment='" + comment + '\'' +
-                '}';
+        return Objects.hash(id, state, address, phone, items, orderDate, comment);
     }
 }
