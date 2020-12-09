@@ -10,6 +10,6 @@ public interface OrderDAO {
     void addItem(int orderId, int itemId, int count) throws DAOException;
     void deleteItem(int orderId, int itemId) throws DAOException;
     Order getOrder(int orderId) throws DAOException;
-    ArrayList<Integer> getCurrentOrderId(int userId) throws DAOException;
+    ArrayList<Integer> getUserOrders(int userId) throws DAOException;
     void confirmOrder(Order order) throws DAOException;
 }

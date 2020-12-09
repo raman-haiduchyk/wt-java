@@ -167,7 +167,7 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public ArrayList<Integer> getCurrentOrderId(int userId) throws DAOException {
+    public ArrayList<Integer> getUserOrders(int userId) throws DAOException {
 
         PreparedStatement ps = null;
         Connection connection = null;
