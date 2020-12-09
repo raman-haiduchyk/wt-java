@@ -12,7 +12,29 @@ public class Item implements Serializable {
     private String name;
     private String size;
     private String manufacturer;
+    private int count;
     private double price;
+
+    public Item(int id,
+                String imageUrl,
+                String itemCategory,
+                String team,
+                String name,
+                String size,
+                String manufacturer,
+                int count,
+                double price
+    ){
+        this.id = id;
+        this.itemCategory = itemCategory;
+        this.imageUrl = imageUrl;
+        this.name = name;
+        this.team = team;
+        this.size = size;
+        this.manufacturer = manufacturer;
+        this.count = count;
+        this.price = price;
+    }
 
     public Item(){}
 
@@ -48,6 +70,14 @@ public class Item implements Serializable {
         return price;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -81,11 +111,27 @@ public class Item implements Serializable {
     }
 
     @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", itemCategory='" + itemCategory + '\'' +
+                ", team='" + team + '\'' +
+                ", name='" + name + '\'' +
+                ", size='" + size + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", count=" + count +
+                ", price=" + price +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
         return id == item.id &&
+                count == item.count &&
                 Double.compare(item.price, price) == 0 &&
                 Objects.equals(imageUrl, item.imageUrl) &&
                 Objects.equals(itemCategory, item.itemCategory) &&
@@ -97,20 +143,6 @@ public class Item implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, imageUrl, itemCategory, team, name, size, manufacturer, price);
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", itemCategory='" + itemCategory + '\'' +
-                ", team='" + team + '\'' +
-                ", name='" + name + '\'' +
-                ", size='" + size + '\'' +
-                ", manufacturer='" + manufacturer + '\'' +
-                ", price=" + price +
-                '}';
+        return Objects.hash(id, imageUrl, itemCategory, team, name, size, manufacturer, count, price);
     }
 }
