@@ -1,16 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: Mi
-  Date: 07.12.2020
-  Time: 19:57
+  Date: 09.12.2020
+  Time: 14:11
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>BundesFan | Main</title>
-  </head>
-  <body>
+<head>
+    <title>BundesFan | Catalog</title>
+</head>
+<body>
 
-  </body>
+</body>
 </html>
