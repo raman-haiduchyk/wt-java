@@ -58,7 +58,16 @@ public class UserDAOImpl implements UserDAO {
 
             rs.last();
             if(rs.getRow() == 1) {
-                User user = null; //= new User(rs.getInt(DB_COLUMN_ID), rs.getString(DB_COLUMN_LOGIN), rs.getString(DB_COLUMN_NAME), rs.getString(DB_COLUMN_LASTNAME), rs.getString(DB_COLUMN_EMAIL), rs.getString(DB_COLUMN_ROLE));
+                User user =  new User(rs.getInt(DB_COLUMN_ID),
+                                      rs.getString(DB_COLUMN_LOGIN),
+                                      rs.getString(DB_COLUMN_FIRSTNAME),
+                                      rs.getString(DB_COLUMN_LASTNAME),
+                                      rs.getString(DB_COLUMN_EMAIL),
+                                      rs.getString(DB_COLUMN_PHONE),
+                                      rs.getString(DB_COLUMN_ADDRESS),
+                                      rs.getString(DB_COLUMN_FAVTEAM),
+                                      rs.getString(DB_COLUMN_ROLE)
+                );
                 ps.close();
                 rs.close();
                 return user;
