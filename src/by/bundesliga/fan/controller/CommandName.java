@@ -13,6 +13,6 @@ public enum CommandName {
     SHOW_ITEM,
     ADD_TO_ORDER,
     DEL_FROM_ORDER,
-    GET_ORDER,
+    GET_ORDERS,
     CONFIRM_ORDER
 }
