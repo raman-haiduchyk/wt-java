@@ -14,7 +14,6 @@ public class GoToMainPageCommand implements Command {
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         RequestDispatcher dispatcher = req.getRequestDispatcher(MAIN_PAGE_URI);
         dispatcher.forward(req, resp);
     }

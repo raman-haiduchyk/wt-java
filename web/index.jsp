@@ -18,11 +18,15 @@
   </header>
 
 
-  <!--content-->
   <main>
+
+    <c:if test="${param.error == 'error'}">
+      <h2>Oops. Something went wrong while signing in. Try again.</h2>
+    </c:if>
+
     <c:choose>
       <c:when test="${user != null}">
-        <jsp:include page="WEB-INF/jsp/catalog.jsp"/>
+        <jsp:include page="WEB-INF/jsp/orders.jsp"/>
       </c:when>
       <c:otherwise>
         <jsp:include page="WEB-INF/jsp/login.jsp"/>

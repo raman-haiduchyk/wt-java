@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class GoToLoginCommand implements Command {
 
-    private static final String LOGIN_PAGE_URI = "WEB-INF/jsp/login.jsp";
+    private static final String LOGIN_PAGE_URI = "index.jsp";
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
