@@ -1,5 +1,6 @@
 package by.bundesliga.fan.controller.command.impl;
 
+import by.bundesliga.fan.bean.Order;
 import by.bundesliga.fan.controller.command.Command;
 import by.bundesliga.fan.service.OrderService;
 import by.bundesliga.fan.service.exception.ServiceException;
@@ -12,11 +13,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GetUserOrdersCommand implements Command {
+public class GetUserCartCommand implements Command {
 
-    private static final String ORDER_ID_SESSION_ATTR = "itemId";
+    private static final String ORDER_ID_SESSION_ATTR = "orderId";
     private static final String USER_SESSION_ATTR = "user";
-    private static final String REDIRECT_COMMAND = "Controller?command=go_to_main";
+    private static final String REDIRECT_COMMAND = "Controller?command=go_to_orders";
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -32,6 +33,8 @@ public class GetUserOrdersCommand implements Command {
             if(session.getAttribute(ORDER_ID_SESSION_ATTR) != null){
                 int orderId = (int) session.getAttribute(ORDER_ID_SESSION_ATTR);
                 ordersList.removeIf(id -> id == orderId);
+                Order currentOrder = (Order)orderService.getOrder(orderId);
+                session.setAttribute("cartItems", currentOrder.getItems());
             }
             session.setAttribute("orders", ordersList);
 

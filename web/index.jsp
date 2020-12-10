@@ -26,7 +26,7 @@
 
     <c:choose>
       <c:when test="${user != null}">
-        <jsp:include page="WEB-INF/jsp/orders.jsp"/>
+        <c:redirect url="Controller?command=get_user_cart"/>
       </c:when>
       <c:otherwise>
         <jsp:include page="WEB-INF/jsp/login.jsp"/>
