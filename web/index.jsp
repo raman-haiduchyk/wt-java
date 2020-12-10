@@ -12,5 +12,10 @@
   </head>
   <body>
 
+  <header>
+    <jsp:include page="WEB-INF/jsp/header.jsp"/>
+  </header>
+
+
   </body>
 </html>

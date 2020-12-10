@@ -3,4 +3,33 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>by.bundesliga.fan.controller.Controller</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/Controller</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>by.bundesliga.fan.controller.ContextListener</listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>by.bundesliga.fan.controller.CharsetFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <servlet-name>Controller</servlet-name>
+    </filter-mapping>
+
 </web-app>
