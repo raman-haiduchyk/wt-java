@@ -18,7 +18,7 @@
             </div>
         </c:forEach>
         <div class="order-info">
-            Date: ${orderOnfo.orerDate} Status: ${orderOnfo.state}
+            Date: ${orderInfo.orerDate} Status: ${orderInfo.state}
         </div>
     </c:if>
 </main>
