@@ -12,7 +12,7 @@ public enum CommandName {
     GO_TO_CATALOG,
     GO_TO_ORDERS,
     GET_ORDER_INFO,
-    SHOW_ITEM,
+    GET_ITEMS,
     ADD_TO_ORDER,
     DEL_FROM_ORDER,
     GET_USER_CART,

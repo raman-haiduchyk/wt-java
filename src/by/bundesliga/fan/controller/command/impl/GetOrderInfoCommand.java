@@ -20,6 +20,7 @@ public class GetOrderInfoCommand implements Command {
 
     private static final String ORDER_ID_PARAM = "orderId";
     private static final String REDIRECT_COMMAND = "Controller?command=go_to_order_info";
+    private static final String REDIRECT_ERROR_COMMAND = "Controller?command=go_to_orders";
 
     @Override
     public void execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -38,7 +39,7 @@ public class GetOrderInfoCommand implements Command {
             resp.sendRedirect(REDIRECT_COMMAND);
 
         } catch (ServiceException | NumberFormatException e) {
-            resp.sendRedirect(REDIRECT_COMMAND);
+            resp.sendRedirect(REDIRECT_ERROR_COMMAND);
         }
     }
 }

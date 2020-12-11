@@ -14,7 +14,7 @@
 </header>
     <c:if test="${user != null}">
         <div class="nav">
-            <a href="'Controller?command=go_to_catalog'">Catalog</a>
+            <a href="'Controller?command=get_items'">Catalog</a>
             <a href="'Controller?command=go_to_main'">Orders</a>
         </div>
         <div>
