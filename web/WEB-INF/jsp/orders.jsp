@@ -18,6 +18,7 @@
                 <button onclick="location.href='Controller?command=del_from_order&itemId=${item.key.id}'"></button>
             </div>
         </c:forEach>
+        <button onclick="location.href='Controller?command=confirm_order'"></button>
     </c:if>
     <c:forEach var="confirmedOrder" items="${orders}">
         <div class="order-card">

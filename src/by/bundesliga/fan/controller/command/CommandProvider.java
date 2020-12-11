@@ -18,11 +18,13 @@ public final class CommandProvider {
         repository.put(CommandName.GO_TO_CATALOG, new GoToCatalogCommand());
         repository.put(CommandName.GO_TO_ORDERS, new GoToOrdersCommand());
         repository.put(CommandName.GO_TO_LOGIN, new GoToLoginCommand());
+        repository.put(CommandName.GO_TO_ORDER_INFO, new GetOrderInfoCommand());
         repository.put(CommandName.GO_TO_MAIN, new GoToMainPageCommand());
         repository.put(CommandName.ADD_TO_ORDER, new AddToOrderCommand());
         repository.put(CommandName.CONFIRM_ORDER, new ConfirmOrderCommand());
         repository.put(CommandName.DEL_FROM_ORDER, new DeleteFromOrderCommand());
         repository.put(CommandName.GET_USER_CART, new GetUserCartCommand());
+        repository.put(CommandName.GET_ORDER_INFO, new GetOrderInfoCommand());
     }
 
     public Command getCommand(String name) {
