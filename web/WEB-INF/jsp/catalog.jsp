@@ -13,6 +13,10 @@
 </head>
 <body>
 
+<header>
+    <jsp:include page="/WEB-INF/jsp/header.jsp"/>
+</header>
+
 <c:forEach var="category" items="${categories}">
     <a href="/Controller?command=get_items&categoryId=${category.id}">${category.name}</a>
 </c:forEach>
@@ -35,6 +39,10 @@
         <button onclick="location.href='Controller?command=add_to_order&itemId=${item.id}'">Add to cart</button>
     </div>
 </c:forEach>
+
+<footer>
+    <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
+</footer>
 
 </body>
 </html>
